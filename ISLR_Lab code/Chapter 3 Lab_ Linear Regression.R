@@ -76,6 +76,7 @@ lm.fit=lm(Sales~.+Income:Advertising+Price:Age,data=Carseats)#R generates dummy 
 summary(lm.fit)
 attach(Carseats)
 contrasts(ShelveLoc)#The contrasts() function returns the coding that R uses for the dummy contrasts() variables
+#R has created a ShelveLocGood dummy variable that takes on a value of 1 if the shelving location is good, and 0 otherwise.
 
 # Writing Functions
 
