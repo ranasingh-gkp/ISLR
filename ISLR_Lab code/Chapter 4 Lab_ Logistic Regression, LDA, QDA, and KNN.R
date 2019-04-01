@@ -25,6 +25,7 @@ glm.probs[1:10]
 contrasts(Direction)
 #rep() function replicates the values in x.
 glm.pred=rep("Down",1250)
+#The first command creates a vector of 1,250 Down elements
 glm.pred[glm.probs>.5]="Up"
 table(glm.pred,Direction)
 (507+145)/1250
@@ -56,7 +57,7 @@ library(MASS)
 lda.fit=lda(Direction~Lag1+Lag2,data=Smarket,subset=train)
 lda.fit
 plot(lda.fit)
-#The plot() function produces plots of the linear discriminants, obtained by computing ???0.642 × Lag1 ??? 0.514 × Lag2 for each of the training observations.
+#The plot() function produces plots of the linear discriminants, obtained by computing ???0.642 Ã— Lag1 ??? 0.514 Ã— Lag2 for each of the training observations.
 lda.pred=predict(lda.fit, Smarket.2005)
 names(lda.pred)
 lda.class=lda.pred$class
