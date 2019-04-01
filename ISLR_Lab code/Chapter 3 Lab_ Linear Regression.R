@@ -44,6 +44,7 @@ summary(lm.fit)
 
 library(car)
 vif(lm.fit) #The vif() function, part of the car package, can be used to compute variance inflation factors.
+#vif ia the ratio of the variance of ˆβj when fitting the full model divided by the variance of ˆβj if fit on its own
 lm.fit1=lm(medv~.-age,data=Boston)#regression using all predictors except age
 summary(lm.fit1)
 lm.fit1=update(lm.fit, ~.-age)#Alternatively, the update() function can be used
